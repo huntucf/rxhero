@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,7 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'rxhero',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +57,9 @@ ROOT_URLCONF = 'rxhero.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(MAIN_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,6 +85,13 @@ DATABASES = {
     }
 }
 
+# Parse database configuration from $DATABASE_URL 
+import dj_database_url 
+DATABASES['default'] =  dj_database_url.config()  
+# Honor the 'X-Forwarded-Proto' header for request.is_secure() 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  
+# Allow all host headers 
+ALLOWED_HOSTS = ['*'] 
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -102,3 +111,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_DIRS = (
+    os.path.join(MAIN_DIR, 'static'),
+    )
+
+STATICFILES_DIRS = (
+    os.path.join(MAIN_DIR, "static"),
+    )
