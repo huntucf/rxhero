@@ -1,0 +1,211 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="description" content="">
+    <meta name="author" content="">
+ 
+    <title>RxHero</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/agency.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="LC-navbar" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div id ="LC-navbar-header" class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#LC-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"><img src="{% static "img/svg/rx_hero.png" %}" class="img-responsive2"/></a> 
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="LC-navbar-collapse" class="collapse navbar-collapse">
+                
+                <ul id="LC-navbar-links" class="nav navbar-nav navbar-right">
+                    {% block navigation %}
+                    <li>
+                        <a class="page-scroll" href="#services">About Us</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">How It Works</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Get Invited</a>
+                    </li>
+                    {% endblock %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    {% block main_content %}
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading">Find your prescriptions at the lowest price near you. For free.</div>
+                <div class="intro-lead-in">Powered by you - the crowd.
+            </div>
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4 text-center">
+                <a href="#services" class="page-scroll btn btn-xl">About Us</a>
+            </div>
+            <div class="col-sm-4">
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About RxHero</h2>
+                    <h3 class="section-subheading text-muted"> Prescription drugs prices are different at every store, so we search everywhere to find the best insurance and uninsured prices just for you.
+                    </h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img class ="coffeed-svg-icon" src="{% static "img/svg/hourglass.png" %}"</>
+                    <h4 class="service-heading">Save Time</h4>
+                    <p class="text-muted">Did you know that the same prescription can vary widely in price at different pharmacies, even with the same insurance provider? We give you all the price information you need at your fingertips.</p>
+                </div>
+                <div class="col-md-4">
+                    <img class ="coffeed-svg-icon" src="{% static "img/svg/money_icon.png" %}"</>
+                    <h4 class="service-heading">Save Money</h4>
+                    <p class="text-muted">Since we do the price comparison for you, you're always getting the best deal. We'll show you the lowest price in your area, or anywhere!</p>
+                </div>
+                <div class="col-md-4">
+                    <img class ="coffeed-svg-icon" src="{% static "img/svg/karma_icon.png" %}"</>
+                    <h4 class="service-heading">Get Karma</h4>
+                    <p class="text-muted">Our insured pricing data is open sourced.This means any prescription pricing information we get is submitted by users like you. We couldn't do this without you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Get started simply & securely</h2>
+                    <h3 class="section-subheading text-muted">We're obsessed with security.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="team-member">
+                        <img class ="coffeed-icon" src="{% static "img/svg/one.png" %}"</>
+                            <h4>Shoot us your e-mail</h4>
+                            <p class="text-muted">We will contact you when we launch. After launch, we'll have you do the following:</p>
+                        <img class ="coffeed-icon" src="{% static "img/svg/two.png" %}"</>
+                            <h4>Connect your health insurance account</h4>
+                            <p class="text-muted">We'll need your Rx prices to share with the crowd. Don't worry, we protect your data with the same 128-bit encryption that banks use.</p>
+                        <img class ="coffeed-icon" src="{% static "img/svg/three.png" %}"</>
+                            <h4>Access the lowest prescription prices</h4>
+                            <p class="text-muted">Search for the lowest price of a prescription by lowest price or distance.</p>
+
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class = "img" src="{% static "img/svg/ss_copy.png" %}" class="img-responsive" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Be the first to find out.</h2>
+                    <h3 class="section-subheading text-muted">We'll be launching soon, so sign up to be one of the first to be invited.</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4">
+                    <div id="kol_embed_container_64289"></div>
+                    <script>window.jQuery || document.write('<scr' + 'ipt src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"><\/sc' + 'ript>')</script>
+                    <script>window.$kol_jquery = window.jQuery</script>
+                    <script src="https://kickoffpages-kickofflabs.netdna-ssl.com/widgets/1.4.0/kol_embed.js"></script>
+                    <script src='https://kickoffpages-kickofflabs.netdna-ssl.com/w/51041/64289.js'></script>
+                    <div class="col-sm-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; RxHero 2015</span>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{% static "js/jquery.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+</body>
+
+</html>
