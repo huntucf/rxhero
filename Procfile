@@ -1,1 +1,1 @@
-web: gunicorn rxhero.wsgi --log-file -
+web: python manage.py runserver
